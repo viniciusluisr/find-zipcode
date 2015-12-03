@@ -28,7 +28,7 @@ public class NearestAddressServiceImpl implements NearestAddressService {
     public Optional<Address> findZipcodeInDepth(String zipcode) {
         Address address = repository.findByZipcode(zipcode);
 
-        if(zipcode != null) return Optional.of(address);
+        if(address != null) return Optional.of(address);
 
         log.info("Buscando CEPs próximos...");
 
