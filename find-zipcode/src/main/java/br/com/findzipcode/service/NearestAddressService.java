@@ -7,8 +7,7 @@ import java.util.Optional;
 /**
  * Created by Vinicius on 03/12/15.
  */
-public interface AddressService {
+public interface NearestAddressService {
 
-    Optional<Address> findAddressByZipcode(String zipcode);
-
+    Optional<Address> findZipcodeInDepth(String zipcode);
 }
