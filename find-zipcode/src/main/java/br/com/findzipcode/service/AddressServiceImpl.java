@@ -3,6 +3,7 @@ package br.com.findzipcode.service;
 import br.com.findzipcode.exception.AddressNotFoundException;
 import br.com.findzipcode.model.Address;
 import br.com.findzipcode.repository.AddressRepository;
+import com.google.common.base.Preconditions;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,8 @@ public class AddressServiceImpl implements  AddressService {
 
     @Override
     public Optional<Address> findAddressByZipcode(String zipcode) {
+
+        Preconditions.checkArgument(zipcode.matches("\\d{8}"), "CEP inválido!");
 
         log.info("Buscando um endereço a partir do CEP: " + zipcode);
 

@@ -42,9 +42,8 @@ public class Address extends BaseEntity {
     @Column(nullable = false, unique = true, length = 8)
     private String zipcode;
 
-    @Size(min = 1, message = "O Número deve conter pelo menos {min} caractere numérico.")
     @NotNull(message = "Por favor, preencha o Número!")
-    @Column(nullable = false, unique = false)
+    @Column(nullable = false)
     private Integer number;
 
     @Size(min = 3, max = 200, message = "O Logradouro deve conter no mínimo {min} caracteres e no máximo {max} caracteres.")

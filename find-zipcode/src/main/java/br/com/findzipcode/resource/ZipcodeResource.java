@@ -29,9 +29,9 @@ public class ZipcodeResource {
     private AddressService addressService;
 
     @RequestMapping(value = "/{cep}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public HttpEntity<Optional<Address>> getAddressByZipcode(@PathVariable final String cep) {
+    public HttpEntity<Address> getAddressByZipcode(@PathVariable final String cep) {
         Optional<Address> response = addressService.findAddressByZipcode(cep);
-        return new ResponseEntity<Optional<Address>>(response, HttpStatus.OK);
+        return new ResponseEntity<Address>(response.get(), HttpStatus.OK);
     }
 
 }
