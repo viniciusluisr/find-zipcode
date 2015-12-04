@@ -21,7 +21,7 @@ import java.util.Optional;
  * Created by Vinicius on 03/12/15.
  */
 @RestController
-@RequestMapping(value = "/v1/cep")
+@RequestMapping(value = "/v1/zipcodes")
 @Validated
 public class ZipcodeResource {
 

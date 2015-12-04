@@ -88,6 +88,13 @@
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>br.com.six2six</groupId>
+      <artifactId>fixture-factory</artifactId>
+      <version>3.0.0</version>
+      <scope>test</scope>
+    </dependency>
     <!--END TEST STACK-->
 
   </dependencies>

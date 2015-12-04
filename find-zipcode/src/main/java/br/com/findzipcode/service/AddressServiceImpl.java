@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static br.com.findzipcode.util.ValidateUtils.notNullParameter;
+
 /**
  * Created by Vinicius on 03/12/15.
  */
@@ -23,11 +25,11 @@ public class AddressServiceImpl implements  AddressService {
     @Autowired
     private NearestAddressService nearestAddressService;
     @Autowired
-    private AddressRepository repository;
+    private AddressRepository addressRepository;
     private Address nextAddress;
 
     @Override
-    public Optional<Address> findAddressByZipcode(String zipcode) {
+    public Optional<Address> findAddressByZipcode(final String zipcode) {
 
         Preconditions.checkArgument(zipcode.matches("\\d{8}"), "CEP inválido!");
 
@@ -40,6 +42,50 @@ public class AddressServiceImpl implements  AddressService {
 
         return found;
 
+    }
+
+    @Override
+    public void createAddress(final Address address) {
+        notNullParameter(address, "address");
+
+        if(!findAddressByZipcode(address.getZipcode()).isPresent()) {
+            log.info("Salvando o endereço: " + address.toString());
+            addressRepository.save(address);
+        }
+    }
+
+    @Override
+    public Optional<Address> findAddressById(final Long id) {
+        notNullParameter(id, "id");
+
+        log.info("Buscando endereço a partir do Id: " + id);
+        Address address = addressRepository.findOne(id);
+
+        if(address == null) throw new AddressNotFoundException("Endereço não encontrado, por favor, verifique o Id informado: " + id);
+
+        return Optional.of(address);
+    }
+
+    @Override
+    public void updateAddress(final Address address) {
+        notNullParameter(address, "address");
+
+        if(findAddressById(address.getId()).isPresent()) {
+            log.info("Atualizando endereço com os dados: " + address.toString());
+            addressRepository.save(address);
+        } else
+            throw new AddressNotFoundException("Endereço não encontrado, por favor, verifique os dados informados: " + address.toString());
+
+    }
+
+    @Override
+    public void deleteAddressById(final Long id) {
+        notNullParameter(id, "id");
+
+        if(findAddressById(id).isPresent()) {
+            log.info("Excluindo um endereço com o Id: " + id);
+            addressRepository.delete(id);
+        }
     }
 
 }
