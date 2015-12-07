@@ -30,7 +30,6 @@ public class AddressServiceImpl implements  AddressService {
 
     @Override
     public Optional<Address> findAddressByZipcode(final String zipcode) {
-
         Preconditions.checkArgument(zipcode.matches("\\d{8}"), "CEP inválido!");
 
         log.info("Buscando um endereço a partir do CEP: " + zipcode);
@@ -47,8 +46,9 @@ public class AddressServiceImpl implements  AddressService {
     @Override
     public void createAddress(final Address address) {
         notNullParameter(address, "address");
+        Preconditions.checkArgument(address.getZipcode().matches("\\d{8}"), "CEP inválido!");
 
-        if(!findAddressByZipcode(address.getZipcode()).isPresent()) {
+        if(addressRepository.findByZipcode(address.getZipcode()) == null) {
             log.info("Salvando o endereço: " + address.toString());
             addressRepository.save(address);
         }
@@ -69,8 +69,9 @@ public class AddressServiceImpl implements  AddressService {
     @Override
     public void updateAddress(final Address address) {
         notNullParameter(address, "address");
+        Preconditions.checkArgument(address.getZipcode().matches("\\d{8}"), "CEP inválido!");
 
-        if(findAddressById(address.getId()).isPresent()) {
+        if(addressRepository.findOne(address.getId()) !=  null) {
             log.info("Atualizando endereço com os dados: " + address.toString());
             addressRepository.save(address);
         } else

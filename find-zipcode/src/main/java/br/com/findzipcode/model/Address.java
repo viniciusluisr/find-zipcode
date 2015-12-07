@@ -46,23 +46,23 @@ public class Address extends BaseEntity {
     @Column(nullable = false)
     private Integer number;
 
-    @Size(min = 3, max = 200, message = "O Logradouro deve conter no mínimo {min} caracteres e no máximo {max} caracteres.")
+    @Size(min = 1, max = 180, message = "O Logradouro deve conter no mínimo {min} caracteres e no máximo {max} caracteres.")
     @NotNull(message = "Por favor, preencha o logradouro!")
-    @Column(nullable = false, length = 120)
+    @Column(nullable = false, length = 180)
     private String street;
 
     @Size(max = 200, message = "Bairro deve conter no máximo {max} caracteres.")
-    @Column(nullable = false, length = 120)
+    @Column(nullable = false, length = 200)
     private String neighborhood;
 
-    @Size(min = 3, max = 200, message = "Cidade deve conter no mínimo {min} caracteres e no máximo {max} caracteres.")
+    @Size(min = 1, max = 180, message = "Cidade deve conter no mínimo {min} caracteres e no máximo {max} caracteres.")
     @NotNull(message = "Cidade é obrigatório!")
     @Column(nullable = false, length = 180)
     private String city;
 
     @Size(min = 2, max = 2, message = "Estado deve conter no máximo 2 caracteres.")
     @NotNull(message = "Estado é obrigatório!")
-    @Column(nullable = false, length = 120)
+    @Column(nullable = false)
     private String state;
 
     @Column(nullable = true, length = 120)

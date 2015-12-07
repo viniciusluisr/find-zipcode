@@ -15,7 +15,7 @@ public interface AddressService {
      * @param zipcode o cep do Address a ser buscado
      * @return um Optional com o Address encontrado
      */
-    Optional<Address> findAddressByZipcode(String zipcode);
+    Optional<Address> findAddressByZipcode(final String zipcode);
 
     /**
      * Cria um novo Address
