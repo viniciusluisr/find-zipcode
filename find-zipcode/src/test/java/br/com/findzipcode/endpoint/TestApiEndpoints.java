@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.Collections;
 
 /**
+ * Classe responsável por disponibilizar os endpoints da api para a realização de testes de integração
  * Created by Vinicius on 06/12/15.
  */
 public class TestApiEndpoints {
