@@ -39,6 +39,10 @@ CEPs já existentes: 83838383, 98543012, 78543934, 64598884 e 50492398
 [PUT] http://127.0.0.1:8080/v1/addresses - Atualiza um endereço existente
 [DELETE] http://127.0.0.1:8080/v1/addresses/{id} - Exclui um Endereço a partir de um Id único e inteiro
 
+# HOW TO USE
+- Para usar o projeto é necessário ter o Java 8 e maven instalados, com isso, basta ir até a raiz do projeto onde o pom está localizado e executar o comando mvn clean package spring-boot:run
+
+
 # Questão 3
 # Tecnologias:
 - maven para build da aplicação e gerenciamento de dependências
