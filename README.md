@@ -30,14 +30,14 @@
 
 #ENDPOINTS:
 - CEP:
-[GET] http://127.0.0.1:8080/v1/zipcodes/{cep} - Consultar um Endereço a partir de um CEP existente (deve conter exatamente 8 dígitos numéricos)
-CEPs já existentes: 83838383, 98543012, 78543934, 64598884 e 50492398
+[GET] http://127.0.0.1:8080/v1/zipcodes/{cep} - Consultar um Endereço a partir de um CEP existente (deve conter exatamente 8 dígitos numéricos);
+CEPs já existentes: 83838383, 98543012, 78543934, 64598884 e 50492398;
 
 - ENDEREÇO:
-[POST] http://127.0.0.1:8080/v1/addresses - Cadastrar um novo Endereço (zipcode, number, street, neighborhood, city e state são campos obrigatórios)
-[GET] http://127.0.0.1:8080/v1/addresses/{id} - Consultar um Endereço a partir de um Id único e inteiro
-[PUT] http://127.0.0.1:8080/v1/addresses - Atualiza um endereço existente
-[DELETE] http://127.0.0.1:8080/v1/addresses/{id} - Exclui um Endereço a partir de um Id único e inteiro
+[POST] http://127.0.0.1:8080/v1/addresses - Cadastrar um novo Endereço (zipcode, number, street, neighborhood, city e state são campos obrigatórios);
+[GET] http://127.0.0.1:8080/v1/addresses/{id} - Consultar um Endereço a partir de um Id único e inteiro;
+[PUT] http://127.0.0.1:8080/v1/addresses - Atualiza um endereço existente;
+[DELETE] http://127.0.0.1:8080/v1/addresses/{id} - Exclui um Endereço a partir de um Id único e inteiro;
 
 # HOW TO USE
 - Para usar o projeto é necessário ter o Java 8 e Maven instalados, com isso, basta ir até a raiz do projeto onde o pom.xml está localizado e executar o comando mvn clean package spring-boot:run
