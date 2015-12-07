@@ -15,6 +15,7 @@
     - Os testes de integração foram criados utilizando o starter test do spring boot que facilita bastante nas chamadas e tratamento dos endpoints
 - maven para build da aplicação e gerenciamento de dependências
 - Java 8
+- Swagger para documentar e expor a api via browser
 
 # Estratégias, design e arquitetura:
 - A aplicação possui 3 camadas lógicas muito bem definidas e coesas: Repositories, Services e Resources. O Repository foi criado utilizando Spring Data que permite que seja criada apenas a Interface do repositório de dados e a implementação é gerada pelo Spring. Foi utilizado o JpaRepository que já possui operações básicas de CRUD. Os Services possuem uma interface de contrato que garante coesão e a documentação dos métodos que também garante organização para a leitura do código. O Services aplicam as regras de negócio e constraints, ou seja, toda a inteligência de manipulação de dados e lógica de programação são realizadas pelos Services, e estes injetam e acessam os Repositories para acesso a dados. Os Resources são responsáveis por atender a camada HTTP e definir os endpoints da aplicação, aplicando corretamente a utilização dos verbos HTTP, versionamento e URLs. Os Resources injetam e acessam os Services para consultar enviar informações vindas do mundo externo.
@@ -41,6 +42,12 @@ CEPs já existentes: 83838383, 98543012, 78543934, 64598884 e 50492398;
 
 # HOW TO USE
 - Para usar o projeto é necessário ter o Java 8 e Maven instalados, com isso, basta ir até a raiz do projeto onde o pom.xml está localizado e executar o comando mvn clean package spring-boot:run
+
+# SWAGGER
+Para utilizar a api com o Swagger basta acessar:
+- http://localhost:8080/api-docs para a documentação básica da API
+- http://localhost:8080/dist/index.html para utilizar a API
+
 
 
 # Questão 3
