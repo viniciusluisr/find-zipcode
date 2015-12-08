@@ -1,7 +1,7 @@
 # find-zipcode
 
 # Tecnologias:
-- Spring boot com data-jpa starter para um serviço bootável que pode ser instalado e startado fácilmente, e o starter escolhido auxilia no uso do spring data para persistência
+- Spring boot com data-jpa starter para tornar a aplicação bootável que pode ser instalada e startada fácilmente, e o starter escolhido auxilia no uso do spring data para persistência
 - Hsqldb para gerar um banco de dados relacional em memória
 - Apache commons lang3 para a utilização do HashCodeBuilder e ToStringBuilder
 - Lombok para a geração automática de getters e setters
