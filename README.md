@@ -11,7 +11,7 @@
     - Os testes unitários foram criados utilizando JUnit
     - Para a criação de objetos e cenários foi utilizado o Fixture Factory por sua facilidade na criação dinâmica de objetos
     - Para criar objetos mockados foi utilizado o Mockito
-    - Todas as classes de teste utilizam duas classes utilitárias: TestSupport que provê operações comuns a qualquer tipo de teste unitário e a FixtureTestSupport que provê o TestFixtureSupport para criação de objetos a partir de Templates definidas
+    - Todas as classes de teste utilizam duas classes utilitárias: TestSupport que provê operações comuns a qualquer tipo de teste unitário e a TestFixtureSupport para criação de objetos a partir de Templates definidas
     - Os testes de integração foram criados utilizando o starter test do spring boot que facilita bastante nas chamadas e tratamento dos endpoints
 - maven para build da aplicação e gerenciamento de dependências
 - Java 8
